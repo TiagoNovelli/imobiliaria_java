@@ -4,6 +4,9 @@ import java.text.NumberFormat;
 import java.util.Locale;
 import java.util.Scanner;
 import java.util.Locale;
+import util.Validadores;
+
+import static util.Validadores.validarInteiroPositivo;
 
 public class InterfaceUsuario {
 
@@ -30,9 +33,11 @@ public class InterfaceUsuario {
 
     public static int prazoFinanciamentoFornecido () {
         System.out.println("Qual o prazo do financiamento em anos?");
-        int prazoFinanciamento = sc.nextInt();
-        System.out.println("o prazo do financiamento é de " + prazoFinanciamento + " anos");
-        return prazoFinanciamento;
+        int prazo = sc.nextInt();
+        if (validarInteiroPositivo(prazo)) {
+            System.out.println("o prazo do financiamento é de " + prazo + " anos");
+            return prazo;
+        } return 0;
     }
 
 }
