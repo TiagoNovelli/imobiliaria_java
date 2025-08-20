@@ -13,7 +13,7 @@ public class Main {
         int prazo = InterfaceUsuario.prazoFinanciamentoFornecido();
 
         Financiamento fin = new Financiamento(valor, taxa, prazo);
-        System.out.println(fin);
+        fin.infoFinanciamento();
 
 
     }
