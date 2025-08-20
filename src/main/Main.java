@@ -25,7 +25,6 @@ public class Main {
             prazo = dados.prazoFinanciamentoFornecido();
         } while (!Validadores.validarPrazo(prazo));
 
-
         Financiamento fin = new Financiamento(valor, taxa, prazo);
         fin.infoFinanciamento();
 

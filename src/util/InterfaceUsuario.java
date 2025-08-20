@@ -3,10 +3,6 @@ package util;
 import java.text.NumberFormat;
 import java.util.Locale;
 import java.util.Scanner;
-import java.util.Locale;
-import util.Validadores;
-
-import static util.Validadores.validarPrazo;
 
 public class InterfaceUsuario {
 
