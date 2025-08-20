@@ -6,38 +6,33 @@ import java.util.Scanner;
 import java.util.Locale;
 import util.Validadores;
 
-import static util.Validadores.validarInteiroPositivo;
+import static util.Validadores.validarPrazo;
 
 public class InterfaceUsuario {
 
     // Obtém o formatador para a localização brasileira (pt-BR)
     static NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("pt", "BR"));
-
-
-
     static Scanner sc = new Scanner(System.in);
 
-    public static double valorImovelFornecido () {
+    public  double valorImovelFornecido () {
         System.out.println("Qual o valor do imóvel?");
         double  valorImovel = sc.nextDouble();
         System.out.println("O valor do imóvel é " + nf.format(valorImovel));
         return valorImovel;
     }
 
-    public static double taxaJurosAnualFornecida () {
+    public double taxaJurosAnualFornecida () {
         System.out.println("Qual a taxa de juros anual?");
         double taxaJurosAnual = sc.nextDouble();
         System.out.println("a taxa de juros anual é  " + taxaJurosAnual + "%");
         return taxaJurosAnual;
     }
 
-    public static int prazoFinanciamentoFornecido () {
+    public int prazoFinanciamentoFornecido () {
         System.out.println("Qual o prazo do financiamento em anos?");
         int prazo = sc.nextInt();
-        if (validarInteiroPositivo(prazo)) {
-            System.out.println("o prazo do financiamento é de " + prazo + " anos");
-            return prazo;
-        } return 0;
+        System.out.println("o prazo do financiamento é de " + prazo + " anos");
+        return prazo;
     }
 
 }
