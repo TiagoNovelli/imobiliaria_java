@@ -6,11 +6,9 @@ public class Financiamento {
     // Obtém o formatador para a localização brasileira (pt-BR)
     NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("pt", "BR"));
 
-    private double valorImovel;
-    private double taxaJurosAnual;
-    private int prazoFinanciamento;
-
-
+    protected double valorImovel;
+    protected double taxaJurosAnual;
+    protected int prazoFinanciamento;
 
     public double getValorImovel() {
         return valorImovel;

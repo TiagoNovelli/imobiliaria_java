@@ -3,6 +3,8 @@ package main;
 import modelo.Financiamento;
 import util.InterfaceUsuario;
 import util.Validadores;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,6 +14,7 @@ public class Main {
         double valor;
         double taxa;
         int prazo;
+        List <Financiamento> listaDeFinanciamentos = new ArrayList<>();
 
         do {
             valor = dados.valorImovelFornecido();
