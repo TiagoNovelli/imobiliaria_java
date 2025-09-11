@@ -1,6 +1,10 @@
 package main;
 
 import modelo.Financiamento;
+import modelo.Casa;
+import modelo.Apartamento;
+import modelo.Terreno;
+
 import util.InterfaceUsuario;
 import util.Validadores;
 import java.util.ArrayList;
@@ -14,6 +18,7 @@ public class Main {
         double valor;
         double taxa;
         int prazo;
+
         List <Financiamento> listaDeFinanciamentos = new ArrayList<>();
 
         do {
@@ -28,9 +33,22 @@ public class Main {
             prazo = dados.prazoFinanciamentoFornecido();
         } while (!Validadores.validarPrazo(prazo));
 
-        Financiamento fin = new Financiamento(valor, taxa, prazo);
-        fin.infoFinanciamento();
+        //Financiamento fin = new Financiamento(valor, taxa, prazo);
+
+        Casa casa1 = new Casa(valor, taxa, prazo);
+        Casa casa2 = new Casa(valor, taxa, prazo);
+        Apartamento apartamento = new Apartamento(valor, taxa, prazo);
+        Terreno terreno = new Terreno(valor, taxa, prazo);
 
 
+        listaDeFinanciamentos.add(casa1);
+        listaDeFinanciamentos.add(casa2);
+        listaDeFinanciamentos.add(apartamento);
+        listaDeFinanciamentos.add(terreno);
+
+        //fin.infoFinanciamento();
+        for (Financiamento i : listaDeFinanciamentos) {
+            i.infoFinanciamento();
+        }
     }
 }

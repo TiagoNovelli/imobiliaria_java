@@ -7,14 +7,13 @@ public class Apartamento extends Financiamento {
 
     @Override
     public double calcularPagamentoMensal() {
-
-        // Imóvel de R$ 500.000,00, 10% de juros, 10 anos
-        // (500000 * (1 + (0,10 / 12) * (0,10 / 12)) ^ (10 * 12)) / ((1 + (0,10 / 12)) ^ (10 * 12) - 1) =  6607,537
         double valorApartamento = super.getValorImovel();
-        double taxaMensal = (super.getTaxaJurosAnual()/12) ;
-        double meses = super.getPrazoFinanciamento() * 12;
+        double taxaMensal = super.getTaxaJurosAnual() / 12; // já está dividido por 100 no construtor
+        int meses = super.getPrazoFinanciamento() * 12;
 
-        return (valorApartamento * Math.pow(1 + taxaMensal,meses)) / (Math.pow(1 + taxaMensal,meses) -1);
+        double numerador = valorApartamento * taxaMensal * Math.pow(1 + taxaMensal, meses);
+        double denominador = Math.pow(1 + taxaMensal, meses) - 1;
 
+        return numerador / denominador;
     }
 }
