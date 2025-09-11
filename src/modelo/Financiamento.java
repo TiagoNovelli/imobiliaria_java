@@ -2,7 +2,7 @@ package modelo;
 import java.text.NumberFormat;
 import java.util.Locale;
 
-public class Financiamento {
+public abstract class  Financiamento {
     // Obtém o formatador para a localização brasileira (pt-BR)
     NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("pt", "BR"));
 
@@ -28,10 +28,10 @@ public class Financiamento {
         this.taxaJurosAnual = taxaJurosAnual /100;
     }
 
-    public double calcularPagamentoMensal () {
+    public abstract double  calcularPagamentoMensal ();
         // 1. Pagamento mensal = (valor do imóvel / (prazo do financiamento em anos * 12)) * (1 + (taxa anual / 12))
-        return (valorImovel / (prazoFinanciamento * 12)) * (1 + (taxaJurosAnual / 12));
-    }
+        //return (valorImovel / (prazoFinanciamento * 12)) * (1 + (taxaJurosAnual / 12));
+
 
     public double pagamentoTotal() {
         // 2. Total do pagamento = pagamento mensal * prazo do financiamento em anos * 12

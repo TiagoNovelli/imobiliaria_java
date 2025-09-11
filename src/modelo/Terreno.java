@@ -1,14 +1,25 @@
 package modelo;
 
 public class Terreno extends Financiamento {
-    public Terreno (double valorImovel, double taxaJurosAnual, int prazoFinanciamento) {
-        super(valorImovel, taxaJurosAnual, prazoFinanciamento);
+    private String zona;
 
+    public Terreno (double valorImovel, double taxaJurosAnual, int prazoFinanciamento, String zona) {
+        super(valorImovel, taxaJurosAnual, prazoFinanciamento);
+        this.zona = zona;
+    }
+
+
+    public String getZona() {
+        return zona;
+    }
+
+    public void setZona(String zona) {
+        this.zona = zona;
     }
 
     @Override
     public double calcularPagamentoMensal() {
-        return super.calcularPagamentoMensal() * 1.02;
+        return (valorImovel / (prazoFinanciamento * 12)) * (1 + (taxaJurosAnual / 12)) * 1.02;
     }
 
 
