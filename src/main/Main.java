@@ -18,6 +18,11 @@ public class Main {
         double valor;
         double taxa;
         int prazo;
+        double areaConstruida;
+        double areaTerreno;
+        int numeroVagasGaragem;
+        int numeroAndar;
+        String zona;
 
         List <Financiamento> listaDeFinanciamentos = new ArrayList<>();
 
@@ -35,10 +40,10 @@ public class Main {
 
         //Financiamento fin = new Financiamento(valor, taxa, prazo);
 
-        Casa casa1 = new Casa(valor, taxa, prazo);
-        Casa casa2 = new Casa(valor, taxa, prazo);
-        Apartamento apartamento = new Apartamento(valor, taxa, prazo);
-        Terreno terreno = new Terreno(valor, taxa, prazo);
+        Casa casa1 = new Casa(valor, taxa, prazo, areaConstruida, areaTerreno);
+        Casa casa2 = new Casa(valor, taxa, prazo, areaConstruida, areaTerreno);
+        Apartamento apartamento = new Apartamento(valor, taxa, prazo,numeroVagasGaragem, numeroAndar);
+        Terreno terreno = new Terreno(valor, taxa, prazo, zona);
 
 
         listaDeFinanciamentos.add(casa1);
