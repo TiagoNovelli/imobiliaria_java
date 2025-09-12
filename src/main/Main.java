@@ -6,7 +6,6 @@ import modelo.Apartamento;
 import modelo.Terreno;
 
 import util.InterfaceUsuario;
-import util.Validadores;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,32 +24,28 @@ public class Main {
         String zona;
 
         List <Financiamento> listaDeFinanciamentos = new ArrayList<>();
+        /*
+        List<Class<?>> listaDeTiposFinanciamento = new ArrayList<>();
 
-        // Lista que armazena classes
-        List<Class<?>> listaDeTipos = new ArrayList<>();
+        listaDeTiposFinanciamento.add(Casa.class);
+        listaDeTiposFinanciamento.add(Casa.class); // pode ter repetição
+        listaDeTiposFinanciamento.add(Apartamento.class);
+        listaDeTiposFinanciamento.add(Terreno.class);
 
-        // Tipos nativos
-
-        listaDeTipos.add(Casa.class);
-        listaDeTipos.add(Casa.class);
-        listaDeTipos.add(Apartamento.class);
-        listaDeTipos.add(Terreno.class);
-
-        for (Class<?> tipo : listaDeTipos) {
-            System.out.println(tipo);
-            do {
-                valor = dados.valorImovelFornecido();
-            } while (!Validadores.validarValorImovel(valor));
-
-            do {
-                taxa = dados.taxaJurosAnualFornecida();
-            } while (!Validadores.validarTaxaJuros(taxa));
-
-            do {
-                prazo = dados.prazoFinanciamentoFornecido();
-            } while (!Validadores.validarPrazo(prazo));
-
+        // foreach com o tipo declarado
+        for (Class<?> tipo : listaDeTiposFinanciamento) {
+            System.out.println(tipo.getName()); // imprime o nome da classe
         }
+        */
+
+        valor = dados.valorImovelFornecido();
+        taxa = dados.taxaJurosAnualFornecida();
+        prazo = dados.prazoFinanciamentoFornecido();
+        areaTerreno = dados.areaTerreno();
+        areaConstruida = dados.areaConstruida();
+        numeroVagasGaragem = dados.numeroVagasGaragem();
+        numeroAndar = dados.numeroAndar();
+        zona = dados.zona();
 
 
         //Financiamento fin = new Financiamento(valor, taxa, prazo);

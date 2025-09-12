@@ -31,4 +31,9 @@ public class Casa extends Financiamento {
         // 1. Pagamento mensal = (valor do imóvel / (prazo do financiamento em anos * 12)) * (1 + (taxa anual / 12))
         return (valorImovel / (prazoFinanciamento * 12)) * (1 + (taxaJurosAnual / 12)) + 80;
     }
+
+    public void infoFinanciamento() {
+        System.out.println("a área do terreno é " + this.getAreaTerreno());
+        System.out.println("a área construida é " + this.getAreaConstruida());
+    }
 }

@@ -22,5 +22,9 @@ public class Terreno extends Financiamento {
         return (valorImovel / (prazoFinanciamento * 12)) * (1 + (taxaJurosAnual / 12)) * 1.02;
     }
 
+    public void infoFinanciamento() {
+        System.out.println("a zona escolhida é " + this.getZona());
+    }
+
 
 }
