@@ -26,17 +26,32 @@ public class Main {
 
         List <Financiamento> listaDeFinanciamentos = new ArrayList<>();
 
-        do {
-            valor = dados.valorImovelFornecido();
-        } while (!Validadores.validarValorImovel(valor));
+        // Lista que armazena classes
+        List<Class<?>> listaDeTipos = new ArrayList<>();
 
-        do {
-            taxa = dados.taxaJurosAnualFornecida();
-        } while (!Validadores.validarTaxaJuros(taxa));
+        // Tipos nativos
 
-        do {
-            prazo = dados.prazoFinanciamentoFornecido();
-        } while (!Validadores.validarPrazo(prazo));
+        listaDeTipos.add(Casa.class);
+        listaDeTipos.add(Casa.class);
+        listaDeTipos.add(Apartamento.class);
+        listaDeTipos.add(Terreno.class);
+
+        for (Class<?> tipo : listaDeTipos) {
+            System.out.println(tipo);
+            do {
+                valor = dados.valorImovelFornecido();
+            } while (!Validadores.validarValorImovel(valor));
+
+            do {
+                taxa = dados.taxaJurosAnualFornecida();
+            } while (!Validadores.validarTaxaJuros(taxa));
+
+            do {
+                prazo = dados.prazoFinanciamentoFornecido();
+            } while (!Validadores.validarPrazo(prazo));
+
+        }
+
 
         //Financiamento fin = new Financiamento(valor, taxa, prazo);
 
