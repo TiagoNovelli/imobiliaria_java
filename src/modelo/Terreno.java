@@ -23,6 +23,7 @@ public class Terreno extends Financiamento {
     }
 
     public void infoFinanciamento() {
+        super.infoFinanciamento();
         System.out.println("a zona escolhida é " + this.getZona());
     }
 

@@ -40,6 +40,8 @@ public abstract class  Financiamento {
     }
 
     public void infoFinanciamento() {
+        System.out.println("========================================");
+        System.out.println("Tipo do financiamento: " + this.getClass().getSimpleName());
         System.out.println("Valor do imovel:");
         System.out.println(nf.format(getValorImovel()));
         System.out.println("Valor da mensalidade:");

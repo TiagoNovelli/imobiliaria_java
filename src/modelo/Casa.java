@@ -33,6 +33,7 @@ public class Casa extends Financiamento {
     }
 
     public void infoFinanciamento() {
+        super.infoFinanciamento();
         System.out.println("a área do terreno é " + this.getAreaTerreno());
         System.out.println("a área construida é " + this.getAreaConstruida());
     }

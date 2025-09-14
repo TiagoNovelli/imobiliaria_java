@@ -66,8 +66,22 @@ public class InterfaceUsuario {
     }
 
     public String zona () {
-        System.out.println("Zona urbana ou rural");
-        String zona = sc.nextLine();
+        String zona;
+        do {
+            System.out.println("1 - Zona urbana / 2 - Zona rural?");
+            int zonaEscolhida = sc.nextInt();
+            if(zonaEscolhida == 1) {
+                zona = "Zona urbana";
+            }
+            else if (zonaEscolhida == 2){
+                zona = "Zona urbana";
+            } else {
+                zona = "invalido";
+                System.out.println("A zona escolhida é invalida");
+            }
+        } while (zona.equals("invalido"));
+
+
         System.out.println("A zona escolhida é  " + zona);
         return zona;
     }

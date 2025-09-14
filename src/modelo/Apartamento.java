@@ -38,6 +38,7 @@ public class Apartamento extends Financiamento {
     }
 
     public void infoFinanciamento() {
+        super.infoFinanciamento();
         System.out.println("o numero do andar é " + getNumeroAndar());
         System.out.println("a quantidade de vagas de garagem é " + getNumeroVagasGaragem());
     }
