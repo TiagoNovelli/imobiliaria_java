@@ -12,7 +12,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println("Hello and welcome!");
+        System.out.println("Vamos iniciar o financiamento!");
         InterfaceUsuario dados = new InterfaceUsuario();
         double valor;
         double taxa;
@@ -23,16 +23,21 @@ public class Main {
         int numeroAndar;
         String zona;
 
+        // Armazenando cada financiamento
         List <Financiamento> listaDeFinanciamentos = new ArrayList<>();
+
+        //Achei uma boa ideia tratar cada financiamento pelo seu tipo
 
         List<Class<?>> listaDeTiposFinanciamento = new ArrayList<>();
 
+        // Teremos 4 financiamentos
+        // todo: posso perguntar quantos tipos de cada  serão
         listaDeTiposFinanciamento.add(Casa.class);
         listaDeTiposFinanciamento.add(Casa.class);
         listaDeTiposFinanciamento.add(Apartamento.class);
         listaDeTiposFinanciamento.add(Terreno.class);
 
-        // foreach com o tipo declarado
+        // para cada item nessa lista e o seu tipo
         for (Class<?> tipo : listaDeTiposFinanciamento) {
             System.out.println("Financiamnto de " + tipo.getSimpleName()); // imprime o nome da classe
             valor = dados.valorImovelFornecido();
